@@ -80,5 +80,15 @@ TODO:
 
 Related ideas: [Racing game](https://www.reddit.com/r/Showerthoughts/comments/aex25s/race_car_video_games_could_be_amazing_if_they/) , [Minimal client](https://github.com/kaylathedev/google-maps-3d-client). WebGL + CORS should work ([test](https://retroplasma.github.io/get_planetoid_metadata.html)).
 
+#### Method for dumping an area:
+
+./dump_area.sh NORTH WEST SOUTH EAST ZOOM_LEVEL
+ex: ./dump_area.sh 48.8711416157 2.2269540256 48.8684591806 2.2323578439 99
+
+which will provide you a folder like [this](./dump_area_image.png)
+each sub folder seen in the screenshot will be a full self contained tile composing the area you requested,
+in each of the sub folder, you will find a geoData.json, which is a file that contains all informations
+needed to place your tiles next to each others (midpoint, bounding box)
+
 #### Important
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
