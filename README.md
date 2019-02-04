@@ -83,6 +83,7 @@ Related ideas: [Racing game](https://www.reddit.com/r/Showerthoughts/comments/ae
 #### Method for dumping an area:
 
 ./dump_area.sh NORTH WEST SOUTH EAST ZOOM_LEVEL
+
 ex: ./dump_area.sh 48.8711416157 2.2269540256 48.8684591806 2.2323578439 99
 
 which will provide you a folder like [this](./dump_area_image.png)
