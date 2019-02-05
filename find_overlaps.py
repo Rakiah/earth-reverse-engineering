@@ -117,7 +117,7 @@ class LevelOctantGeoData(object):
         self.octantGeoDatas = octantGeoDatas
 
 
-MAX_COUNT = 25
+MAX_COUNT = 100
 
 input_box = sys.argv[1:5]
 input_box = LatLonBox(*(float(x) for x in input_box))

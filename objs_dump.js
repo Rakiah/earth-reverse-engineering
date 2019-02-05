@@ -36,8 +36,7 @@ async function run() {
 	const planetoid = await getPlanetoid();
 	const rootEpoch = planetoid.bulkMetadataEpoch[0];
 
-	const geoDatasPerLevel = JSON.parse(process.argv[2]);
-
+	var geoDatasPerLevel = JSON.parse(fs.readFileSync(process.argv[2]));
 	var area = process.argv[3];
 	var level = process.argv[process.argv.length - 1];
 
