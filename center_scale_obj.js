@@ -8,7 +8,7 @@ const readline = require('readline');
 const path = require('path');
 
 module.exports = function scaleMoveObj(file_in, file_out) {
-	const SCALE = 10;
+	const SCALE = 1;
 
 	return new Promise((resolve, reject) =>
 	{
@@ -40,11 +40,11 @@ module.exports = function scaleMoveObj(file_in, file_out) {
 			}).on('close', () => {
 				const center_x = (max_x + min_x) / 2;
 				const center_y = (max_y + min_y) / 2;
-				const center_z = (max_z + min_z) / 2;
+				// const center_z = (max_z + min_z) / 2;
 				const distance_x = Math.abs(max_x - min_x);
 				const distance_y = Math.abs(max_y - min_y);
-				const distance_z = Math.abs(max_z - min_z);
-				const max_distance = Math.max(distance_x, distance_y, distance_z);
+				// const distance_z = Math.abs(max_z - min_z);
+				const max_distance = Math.max(distance_x, distance_y/*, distance_z*/);
 
 				const io = readline.createInterface({
 					input: fs.createReadStream(file_in),
@@ -57,7 +57,7 @@ module.exports = function scaleMoveObj(file_in, file_out) {
 					let [x, y, z] = line.split(' ').slice(1).map(parseFloat);
 					x = (x - center_x) / max_distance * SCALE;
 					y = (y - center_y) / max_distance * SCALE;
-					z = (z - center_z) / max_distance * SCALE;
+					// z = (z - center_z) / max_distance * SCALE;
 					io.output.write(`v ${x} ${y} ${z}\n`);
 				}).on('close', () => {
 					resolve();

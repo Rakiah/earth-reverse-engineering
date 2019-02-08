@@ -29,7 +29,8 @@ const { getPlanetoid, getBulk, getNode, bulk: { getIndexByPath, hasBulkMetadataA
 });
 
 const latLongToOctant = require('./lib/convert-lat-long-to-octant')(utils);
-
+var currentHeightOffset = 0;
+var isFirstOctant = true;
 /***************************** main *****************************/
 async function run() {
 
@@ -40,8 +41,8 @@ async function run() {
 	var area = process.argv[3];
 	var level = process.argv[process.argv.length - 1];
 
-	if (level >= geoDatasPerLevel.length)
-		level = geoDatasPerLevel.length - 1;
+	if (level > geoDatasPerLevel.length)
+		level = geoDatasPerLevel.length;
 
 		
 	const objDir = path.join(DUMP_OBJ_DIR, `${area}-${level}`);
@@ -51,7 +52,7 @@ async function run() {
 	console.log("dumping: " + area + " at level: " + level);
 	console.log("outputing path: " + objDir);
 
-	var geoDatas = geoDatasPerLevel[level];
+	var geoDatas = geoDatasPerLevel[level - 1];
 
 	let octants = 0;
 	let currentCtxObj = null;
@@ -60,18 +61,20 @@ async function run() {
 			console.log('found', path);
 			octants++;
 		},
-		async function nodeDownloaded(path, node, octantsToExclude) {
+		async function nodeDownloaded(path, node, octantsToExclude, mid_point) {
 			console.log('downloaded', path);
-			await writeNodeOBJ(currentCtxObj, node, path, octantsToExclude);
+			await writeNodeOBJ(currentCtxObj, node, path, octantsToExclude, mid_point);
 		}
 	);
 
 	for (const geoData of geoDatas) {
-		currentCtxObj = initCtxOBJ(objDir, `${geoData.mid_point.latitude}-${geoData.mid_point.longitude}`);
+		currentCtxObj = initCtxOBJ(objDir, geoData.mid_point);
 		writeGeoData(currentCtxObj, geoData);
+		
+		isFirstOctant = true;
 
 		for (const oct of geoData.octants) {
-			await search(oct, level);
+			await search(oct, geoData.mid_point, level);
 		}
 
 		await transformObjFile(currentCtxObj);
@@ -89,13 +92,13 @@ async function transformObjFile(currentCtxObj)
 	var scaledOutputPath = `.\\${currentCtxObj.objDir}\\model.scaled.obj`.replace(/\\/g,"/");
 	var dracoOutputPath = `.\\${currentCtxObj.objDir}\\model.drc.bytes`.replace(/\\/g,"/");
 
-	await scaleMoveObj(inputPath, scaledOutputPath);
+	// await scaleMoveObj(inputPath, scaledOutputPath);
 	console.log("Obj file centered and scale !");
 
 	// await convertToDraco(scaledOutputPath, dracoOutputPath);
 	// console.log("Converted to draco file !");
 
-	await deleteIntermediatesFiles(inputPath);
+	// await deleteIntermediatesFiles(inputPath);
 	await deleteIntermediatesFiles(`${currentCtxObj.objDir}\\*.bmp`.replace(/\\/g,"/"));
 	// console.log("remove intermediates files..");
 }
@@ -117,7 +120,7 @@ function convertToDraco(inputPath, outputPath)
 	});
 }
 
-function convertImage(inputPath, outputPath)
+function convertImage(inputPath, outputPath) 
 {
 	return new Promise((resolve, reject) =>
 	{
@@ -156,15 +159,14 @@ function deleteIntermediatesFiles(files)
 function initNodeSearch(rootEpoch, numParallelBranches = 1, nodeFound = null, nodeDownloaded = null) {
 	const sem = semaphore(numParallelBranches - 1);
 
-	return async function search(k, maxLevel = 999) {
-		// if (k.length > maxLevel + 1) return false;
+	return async function search(k, mid_point, maxLevel = 22) {
+		if (k.length > maxLevel) return false;
 
 		let check;
 		try {
 			check = await checkNodeAtNodePath(rootEpoch, k);
 			if (check === null)
 				return false;
-			
 		} catch (ex) {
 			console.error(ex);
 			return false;
@@ -182,12 +184,12 @@ function initNodeSearch(rootEpoch, numParallelBranches = 1, nodeFound = null, no
 		for (const oct of [0, 1, 2, 3, 4, 5, 6, 7]) {
 			promises.push((async function fn() {
 				try {
-					results.push({ oct, res: await search(k + oct, maxLevel) });
+					results.push({ oct, res: await search(k + oct, mid_point, maxLevel) });
 					if (results.length === 8) {
 						const octs = results.filter(({ res }) => res).map(({ oct }) => oct)
 						const node = await getNode(k, check.bulk, check.index);
 						try {
-							await nodeDownloaded(k, node, octs);
+							await nodeDownloaded(k, node, octs, mid_point);
 						} catch (ex) {
 							console.error('Unhandled nodeDownload callback error');
 							throw ex;
@@ -236,11 +238,11 @@ async function checkNodeAtNodePath(rootEpoch, nodePath) {
 /****************************************************************/
 
 /**************************** export ****************************/
-function initCtxOBJ(dir, octant) {
-	var fulldir = path.join(dir, octant);
+function initCtxOBJ(dir, mid_point) {
+	var fulldir = path.join(dir, `${mid_point.latitude}-${mid_point.longitude}`);
 	fs.removeSync(fulldir);
 	fs.ensureDirSync(fulldir);
-	fs.writeFileSync(path.join(fulldir, 'model.obj'), `mtllib model.mtl\n`);
+	fs.writeFileSync(path.join(fulldir, `${mid_point.latitude}-${mid_point.longitude}.obj`), `mtllib ${mid_point.latitude}-${mid_point.longitude}.mtl\n`);
 	return { objDir: fulldir, c_v: 0, c_n: 0, c_u: 0 };
 }
 
@@ -248,7 +250,27 @@ function writeGeoData(ctx, geoData) {
 	fs.writeFileSync(path.join(ctx.objDir, 'geoData.json'), JSON.stringify(geoData));
 }
 
-async function writeNodeOBJ(ctx, node, nodeName, exclude) {
+async function writeNodeOBJ(ctx, node, nodeName, exclude, mid_point) {
+	
+	if (isFirstOctant)
+	{
+		if (parseInt(nodeName[nodeName.length - 1]) >= 4)
+		{
+			console.log("octant starting already, number is superior to 4");
+			currentHeightOffset = 180;
+		}
+		else
+		{
+			console.log("octant starting at normal level");
+			currentHeightOffset = 0;
+		}
+		
+		isFirstOctant = false;
+	}
+	else
+		currentHeightOffset += 180;
+
+	console.log(`height offset: ${currentHeightOffset}`);
 	for (const [meshIndex, mesh] of Object.entries(node.meshes)) {
 		const meshName = `${nodeName}_${meshIndex}`;
 		const tex = mesh.texture;
@@ -256,7 +278,7 @@ async function writeNodeOBJ(ctx, node, nodeName, exclude) {
 		const override_extension = "png";
 
 		const obj = writeMeshOBJ(ctx, meshName, texName, node, mesh, exclude);
-		fs.appendFileSync(path.join(ctx.objDir, 'model.obj'), obj);
+		fs.appendFileSync(path.join(ctx.objDir, `${mid_point.latitude}-${mid_point.longitude}.obj`), obj);
 
 		const { buffer: buf, extension: ext } = decodeTexture(tex);
 		
@@ -264,7 +286,7 @@ async function writeNodeOBJ(ctx, node, nodeName, exclude) {
 		await convertImage(path.join(ctx.objDir, `${texName}.${ext}`), path.join(ctx.objDir, `${texName}.${override_extension}`));
 		
 
-		fs.appendFileSync(path.join(ctx.objDir, 'model.mtl'), `
+		fs.appendFileSync(path.join(ctx.objDir, `${mid_point.latitude}-${mid_point.longitude}.mtl`), `
 			newmtl ${texName}
 			Ka 1.000000 1.000000 1.000000
 			Kd 1.000000 1.000000 1.000000
@@ -305,6 +327,7 @@ function writeMeshOBJ(ctx, meshName, texName, payload, mesh, exclude) {
 	console.log(`o planet_${meshName}`);
 
 	console.log("# vertices");
+	// let offset = setAndGetReferenceOffset(payload.matrixGlobeFromMesh);
 	for (let i = 0; i < vertices.length; i += 8) {
 
 		let x = vertices[i + 0]
@@ -318,14 +341,18 @@ function writeMeshOBJ(ctx, meshName, texName, payload, mesh, exclude) {
 		let _w = 0;
 
 		const ma = payload.matrixGlobeFromMesh;
-		_x = x * ma[0] + y * ma[4] + z * ma[8] + w * ma[12];
-		_y = x * ma[1] + y * ma[5] + z * ma[9] + w * ma[13];
-		_z = x * ma[2] + y * ma[6] + z * ma[10] + w * ma[14];
-		_w = x * ma[3] + y * ma[7] + z * ma[11] + w * ma[15];
+		ma[14] = 0;
 
-		x = _x;
-		y = _y;
-		z = _z;
+		// _x = x * ma[0] + y * ma[4] + z * ma[8] + w * ma[12];
+		// _y = x * ma[1] + y * ma[5] + z * ma[9] + w * ma[13];
+		// _z = x * ma[2] + y * ma[6] + z * ma[10] + w * ma[14];
+		// _w = x * ma[3] + y * ma[7] + z * ma[11] + w * ma[15];
+
+		// z = _z; //- offset;
+		// x = _x;
+		// y = _y;
+
+		x = x + currentHeightOffset;
 
 		console.log(`v ${x} ${y} ${z}`);
 

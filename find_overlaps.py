@@ -117,7 +117,7 @@ class LevelOctantGeoData(object):
         self.octantGeoDatas = octantGeoDatas
 
 
-MAX_COUNT = 100
+MAX_COUNT = 50
 
 input_box = sys.argv[1:5]
 input_box = LatLonBox(*(float(x) for x in input_box))
@@ -131,7 +131,11 @@ bulk = read_bulk_metadata('', epoch)
 overlapping_octants.update_bulk_data(bulk)
 
 octant_per_latlong = []
-for level in range(1, 25):
+for level in range(1, 23):
+    
+    if len(overlapping_octants[level]) >= MAX_COUNT:
+        break
+        
     octant_per_latlong.append([])
     for octant in overlapping_octants[level]:
         bbox = octant_to_latlong(octant.path)
@@ -141,9 +145,6 @@ for level in range(1, 25):
             octant_per_latlong[level - 1].append(OctantGeoData(bbox, [ octant.path ]))
         else:
             octant_per_latlong[level - 1][index].octants.append(octant.path)
-
-    if len(overlapping_octants[level]) >= MAX_COUNT:
-        break
 
     for octant in overlapping_octants[level]:
         if octant.is_bulk():
