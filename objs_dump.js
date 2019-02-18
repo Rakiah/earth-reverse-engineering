@@ -29,8 +29,6 @@ const { getPlanetoid, getBulk, getNode, bulk: { getIndexByPath, hasBulkMetadataA
 });
 
 const latLongToOctant = require('./lib/convert-lat-long-to-octant')(utils);
-var currentHeightOffset = 0;
-var isFirstOctant = true;
 /***************************** main *****************************/
 async function run() {
 
@@ -71,8 +69,6 @@ async function run() {
 		currentCtxObj = initCtxOBJ(objDir, geoData.mid_point);
 		writeGeoData(currentCtxObj, geoData);
 		
-		isFirstOctant = true;
-
 		for (const oct of geoData.octants) {
 			await search(oct, geoData.mid_point, level);
 		}
@@ -251,26 +247,6 @@ function writeGeoData(ctx, geoData) {
 }
 
 async function writeNodeOBJ(ctx, node, nodeName, exclude, mid_point) {
-	
-	if (isFirstOctant)
-	{
-		if (parseInt(nodeName[nodeName.length - 1]) >= 4)
-		{
-			console.log("octant starting already, number is superior to 4");
-			currentHeightOffset = 180;
-		}
-		else
-		{
-			console.log("octant starting at normal level");
-			currentHeightOffset = 0;
-		}
-		
-		isFirstOctant = false;
-	}
-	else
-		currentHeightOffset += 180;
-
-	console.log(`height offset: ${currentHeightOffset}`);
 	for (const [meshIndex, mesh] of Object.entries(node.meshes)) {
 		const meshName = `${nodeName}_${meshIndex}`;
 		const tex = mesh.texture;
@@ -341,18 +317,15 @@ function writeMeshOBJ(ctx, meshName, texName, payload, mesh, exclude) {
 		let _w = 0;
 
 		const ma = payload.matrixGlobeFromMesh;
-		ma[14] = 0;
 
-		// _x = x * ma[0] + y * ma[4] + z * ma[8] + w * ma[12];
-		// _y = x * ma[1] + y * ma[5] + z * ma[9] + w * ma[13];
-		// _z = x * ma[2] + y * ma[6] + z * ma[10] + w * ma[14];
-		// _w = x * ma[3] + y * ma[7] + z * ma[11] + w * ma[15];
+		 _x = x * ma[0] + y * ma[4] + z * ma[8] + w * ma[12];
+		 _y = x * ma[1] + y * ma[5] + z * ma[9] + w * ma[13];
+		 _z = x * ma[2] + y * ma[6] + z * ma[10] + w * ma[14];
+		 _w = x * ma[3] + y * ma[7] + z * ma[11] + w * ma[15];
 
-		// z = _z; //- offset;
-		// x = _x;
-		// y = _y;
-
-		x = x + currentHeightOffset;
+		 z = _z; //- offset;
+		 x = _x;
+		 y = _y;
 
 		console.log(`v ${x} ${y} ${z}`);
 

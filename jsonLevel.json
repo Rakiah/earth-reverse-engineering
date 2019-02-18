@@ -1,0 +1,2037 @@
+[
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 90,
+                    "longitude": 0
+                },
+                "south_east": {
+                    "latitude": 0,
+                    "longitude": 180
+                }
+            },
+            "mid_point": {
+                "latitude": 45.0,
+                "longitude": 90.0
+            },
+            "octants": [
+                "3"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 90,
+                    "longitude": 0
+                },
+                "south_east": {
+                    "latitude": 0,
+                    "longitude": 90
+                }
+            },
+            "mid_point": {
+                "latitude": 45.0,
+                "longitude": 45.0
+            },
+            "octants": [
+                "30"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 90,
+                    "longitude": 0
+                },
+                "south_east": {
+                    "latitude": 45.0,
+                    "longitude": 90
+                }
+            },
+            "mid_point": {
+                "latitude": 67.5,
+                "longitude": 45.0
+            },
+            "octants": [
+                "306"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 67.5,
+                    "longitude": 0
+                },
+                "south_east": {
+                    "latitude": 45.0,
+                    "longitude": 45.0
+                }
+            },
+            "mid_point": {
+                "latitude": 56.25,
+                "longitude": 22.5
+            },
+            "octants": [
+                "3060"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 56.25,
+                    "longitude": 0
+                },
+                "south_east": {
+                    "latitude": 45.0,
+                    "longitude": 22.5
+                }
+            },
+            "mid_point": {
+                "latitude": 50.625,
+                "longitude": 11.25
+            },
+            "octants": [
+                "30604"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 50.625,
+                    "longitude": 0
+                },
+                "south_east": {
+                    "latitude": 45.0,
+                    "longitude": 11.25
+                }
+            },
+            "mid_point": {
+                "latitude": 47.8125,
+                "longitude": 5.625
+            },
+            "octants": [
+                "306040"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 50.625,
+                    "longitude": 0
+                },
+                "south_east": {
+                    "latitude": 47.8125,
+                    "longitude": 5.625
+                }
+            },
+            "mid_point": {
+                "latitude": 49.21875,
+                "longitude": 2.8125
+            },
+            "octants": [
+                "3060406"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 49.21875,
+                    "longitude": 0
+                },
+                "south_east": {
+                    "latitude": 47.8125,
+                    "longitude": 2.8125
+                }
+            },
+            "mid_point": {
+                "latitude": 48.515625,
+                "longitude": 1.40625
+            },
+            "octants": [
+                "30604060"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 49.21875,
+                    "longitude": 1.40625
+                },
+                "south_east": {
+                    "latitude": 48.515625,
+                    "longitude": 2.8125
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8671875,
+                "longitude": 2.109375
+            },
+            "octants": [
+                "306040607"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 49.21875,
+                    "longitude": 2.109375
+                },
+                "south_east": {
+                    "latitude": 48.8671875,
+                    "longitude": 2.8125
+                }
+            },
+            "mid_point": {
+                "latitude": 49.04296875,
+                "longitude": 2.4609375
+            },
+            "octants": [
+                "3060406073"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 49.04296875,
+                    "longitude": 2.109375
+                },
+                "south_east": {
+                    "latitude": 48.8671875,
+                    "longitude": 2.4609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.955078125,
+                "longitude": 2.28515625
+            },
+            "octants": [
+                "30604060734"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.955078125,
+                    "longitude": 2.109375
+                },
+                "south_east": {
+                    "latitude": 48.8671875,
+                    "longitude": 2.28515625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.9111328125,
+                "longitude": 2.197265625
+            },
+            "octants": [
+                "306040607340"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.9111328125,
+                    "longitude": 2.197265625
+                },
+                "south_east": {
+                    "latitude": 48.8671875,
+                    "longitude": 2.28515625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.88916015625,
+                "longitude": 2.2412109375
+            },
+            "octants": [
+                "3060406073405"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.88916015625,
+                    "longitude": 2.197265625
+                },
+                "south_east": {
+                    "latitude": 48.8671875,
+                    "longitude": 2.2412109375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.878173828125,
+                "longitude": 2.21923828125
+            },
+            "octants": [
+                "30604060734050"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.878173828125,
+                    "longitude": 2.21923828125
+                },
+                "south_east": {
+                    "latitude": 48.8671875,
+                    "longitude": 2.2412109375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8726806640625,
+                "longitude": 2.230224609375
+            },
+            "octants": [
+                "306040607340505"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.8726806640625,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.8671875,
+                    "longitude": 2.2412109375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.86993408203125,
+                "longitude": 2.2357177734375
+            },
+            "octants": [
+                "3060406073405051"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.8726806640625,
+                    "longitude": 2.21923828125
+                },
+                "south_east": {
+                    "latitude": 48.8671875,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.86993408203125,
+                "longitude": 2.2247314453125
+            },
+            "octants": [
+                "3060406073405050"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.8726806640625,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.2357177734375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.871307373046875,
+                "longitude": 2.23297119140625
+            },
+            "octants": [
+                "30604060734050516"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.8671875,
+                    "longitude": 2.2357177734375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.868560791015625,
+                "longitude": 2.23297119140625
+            },
+            "octants": [
+                "30604060734050514"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.2247314453125
+                },
+                "south_east": {
+                    "latitude": 48.8671875,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.868560791015625,
+                "longitude": 2.22747802734375
+            },
+            "octants": [
+                "30604060734050505"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.8726806640625,
+                    "longitude": 2.2247314453125
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.871307373046875,
+                "longitude": 2.22747802734375
+            },
+            "octants": [
+                "30604060734050507"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.8726806640625,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87199401855469,
+                "longitude": 2.231597900390625
+            },
+            "octants": [
+                "306040607340505162",
+                "306040607340505166"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87062072753906,
+                "longitude": 2.231597900390625
+            },
+            "octants": [
+                "306040607340505160",
+                "306040607340505164"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.868560791015625,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.86924743652344,
+                "longitude": 2.231597900390625
+            },
+            "octants": [
+                "306040607340505142",
+                "306040607340505146"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.22747802734375
+                },
+                "south_east": {
+                    "latitude": 48.868560791015625,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.86924743652344,
+                "longitude": 2.228851318359375
+            },
+            "octants": [
+                "306040607340505053",
+                "306040607340505057"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.8726806640625,
+                    "longitude": 2.22747802734375
+                },
+                "south_east": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87199401855469,
+                "longitude": 2.228851318359375
+            },
+            "octants": [
+                "306040607340505073",
+                "306040607340505077"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.22747802734375
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87062072753906,
+                "longitude": 2.228851318359375
+            },
+            "octants": [
+                "306040607340505071",
+                "306040607340505075"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.231597900390625
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.870277404785156,
+                "longitude": 2.2322845458984375
+            },
+            "octants": [
+                "3060406073405051605",
+                "3060406073405051641"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.231597900390625
+                },
+                "south_east": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87096405029297,
+                "longitude": 2.2322845458984375
+            },
+            "octants": [
+                "3060406073405051607",
+                "3060406073405051643"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87199401855469,
+                    "longitude": 2.231597900390625
+                },
+                "south_east": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87165069580078,
+                "longitude": 2.2322845458984375
+            },
+            "octants": [
+                "3060406073405051625",
+                "3060406073405051661"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87199401855469,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.231597900390625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87165069580078,
+                "longitude": 2.2309112548828125
+            },
+            "octants": [
+                "3060406073405051624",
+                "3060406073405051660"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.231597900390625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87096405029297,
+                "longitude": 2.2309112548828125
+            },
+            "octants": [
+                "3060406073405051606",
+                "3060406073405051642"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.231597900390625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.870277404785156,
+                "longitude": 2.2309112548828125
+            },
+            "octants": [
+                "3060406073405051604",
+                "3060406073405051640"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.86924743652344,
+                    "longitude": 2.231597900390625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.869590759277344,
+                "longitude": 2.2309112548828125
+            },
+            "octants": [
+                "3060406073405051426",
+                "3060406073405051462"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.231597900390625
+                },
+                "south_east": {
+                    "latitude": 48.86924743652344,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.869590759277344,
+                "longitude": 2.2322845458984375
+            },
+            "octants": [
+                "3060406073405051427",
+                "3060406073405051463"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.228851318359375
+                },
+                "south_east": {
+                    "latitude": 48.86924743652344,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.869590759277344,
+                "longitude": 2.2295379638671875
+            },
+            "octants": [
+                "3060406073405050537",
+                "3060406073405050573"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.22747802734375
+                },
+                "south_east": {
+                    "latitude": 48.86924743652344,
+                    "longitude": 2.228851318359375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.869590759277344,
+                "longitude": 2.2281646728515625
+            },
+            "octants": [
+                "3060406073405050536",
+                "3060406073405050572"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87199401855469,
+                    "longitude": 2.22747802734375
+                },
+                "south_east": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.228851318359375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87165069580078,
+                "longitude": 2.2281646728515625
+            },
+            "octants": [
+                "3060406073405050734",
+                "3060406073405050770"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.22747802734375
+                },
+                "south_east": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.228851318359375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87096405029297,
+                "longitude": 2.2281646728515625
+            },
+            "octants": [
+                "3060406073405050716",
+                "3060406073405050752"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.22747802734375
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.228851318359375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.870277404785156,
+                "longitude": 2.2281646728515625
+            },
+            "octants": [
+                "3060406073405050714",
+                "3060406073405050750"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.228851318359375
+                },
+                "south_east": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87096405029297,
+                "longitude": 2.2295379638671875
+            },
+            "octants": [
+                "3060406073405050717",
+                "3060406073405050753"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.228851318359375
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.870277404785156,
+                "longitude": 2.2295379638671875
+            },
+            "octants": [
+                "3060406073405050715",
+                "3060406073405050751"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87199401855469,
+                    "longitude": 2.228851318359375
+                },
+                "south_east": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87165069580078,
+                "longitude": 2.2295379638671875
+            },
+            "octants": [
+                "3060406073405050735",
+                "3060406073405050771"
+            ]
+        }
+    ],
+    [
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.2322845458984375
+                },
+                "south_east": {
+                    "latitude": 48.870277404785156,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87044906616211,
+                "longitude": 2.2326278686523438
+            },
+            "octants": [
+                "30604060734050516053",
+                "30604060734050516057"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.870277404785156,
+                    "longitude": 2.2322845458984375
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8701057434082,
+                "longitude": 2.2326278686523438
+            },
+            "octants": [
+                "30604060734050516051",
+                "30604060734050516055"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.870277404785156,
+                    "longitude": 2.231597900390625
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.2322845458984375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8701057434082,
+                "longitude": 2.2319412231445312
+            },
+            "octants": [
+                "30604060734050516050",
+                "30604060734050516054"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.231597900390625
+                },
+                "south_east": {
+                    "latitude": 48.870277404785156,
+                    "longitude": 2.2322845458984375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87044906616211,
+                "longitude": 2.2319412231445312
+            },
+            "octants": [
+                "30604060734050516052",
+                "30604060734050516056"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87096405029297,
+                    "longitude": 2.231597900390625
+                },
+                "south_east": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.2322845458984375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.870792388916016,
+                "longitude": 2.2319412231445312
+            },
+            "octants": [
+                "30604060734050516070",
+                "30604060734050516074",
+                "30604060734050516430"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.231597900390625
+                },
+                "south_east": {
+                    "latitude": 48.87096405029297,
+                    "longitude": 2.2322845458984375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87113571166992,
+                "longitude": 2.2319412231445312
+            },
+            "octants": [
+                "30604060734050516072",
+                "30604060734050516076",
+                "30604060734050516432"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.2322845458984375
+                },
+                "south_east": {
+                    "latitude": 48.87096405029297,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87113571166992,
+                "longitude": 2.2326278686523438
+            },
+            "octants": [
+                "30604060734050516073",
+                "30604060734050516077",
+                "30604060734050516433"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87096405029297,
+                    "longitude": 2.2322845458984375
+                },
+                "south_east": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.870792388916016,
+                "longitude": 2.2326278686523438
+            },
+            "octants": [
+                "30604060734050516071",
+                "30604060734050516075",
+                "30604060734050516431"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87165069580078,
+                    "longitude": 2.2322845458984375
+                },
+                "south_east": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87147903442383,
+                "longitude": 2.2326278686523438
+            },
+            "octants": [
+                "30604060734050516251",
+                "30604060734050516255",
+                "30604060734050516611"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87199401855469,
+                    "longitude": 2.2322845458984375
+                },
+                "south_east": {
+                    "latitude": 48.87165069580078,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.871822357177734,
+                "longitude": 2.2326278686523438
+            },
+            "octants": [
+                "30604060734050516253",
+                "30604060734050516257",
+                "30604060734050516613"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87199401855469,
+                    "longitude": 2.231597900390625
+                },
+                "south_east": {
+                    "latitude": 48.87165069580078,
+                    "longitude": 2.2322845458984375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.871822357177734,
+                "longitude": 2.2319412231445312
+            },
+            "octants": [
+                "30604060734050516252",
+                "30604060734050516256",
+                "30604060734050516612"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87165069580078,
+                    "longitude": 2.231597900390625
+                },
+                "south_east": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.2322845458984375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87147903442383,
+                "longitude": 2.2319412231445312
+            },
+            "octants": [
+                "30604060734050516250",
+                "30604060734050516254",
+                "30604060734050516610"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87165069580078,
+                    "longitude": 2.2309112548828125
+                },
+                "south_east": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.231597900390625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87147903442383,
+                "longitude": 2.2312545776367188
+            },
+            "octants": [
+                "30604060734050516241",
+                "30604060734050516245",
+                "30604060734050516601"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87199401855469,
+                    "longitude": 2.2309112548828125
+                },
+                "south_east": {
+                    "latitude": 48.87165069580078,
+                    "longitude": 2.231597900390625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.871822357177734,
+                "longitude": 2.2312545776367188
+            },
+            "octants": [
+                "30604060734050516243",
+                "30604060734050516247",
+                "30604060734050516603"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87199401855469,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.87165069580078,
+                    "longitude": 2.2309112548828125
+                }
+            },
+            "mid_point": {
+                "latitude": 48.871822357177734,
+                "longitude": 2.2305679321289062
+            },
+            "octants": [
+                "30604060734050516242",
+                "30604060734050516246",
+                "30604060734050516602"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87165069580078,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.2309112548828125
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87147903442383,
+                "longitude": 2.2305679321289062
+            },
+            "octants": [
+                "30604060734050516240",
+                "30604060734050516244",
+                "30604060734050516600"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.87096405029297,
+                    "longitude": 2.2309112548828125
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87113571166992,
+                "longitude": 2.2305679321289062
+            },
+            "octants": [
+                "30604060734050516062",
+                "30604060734050516066",
+                "30604060734050516422"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87096405029297,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.2309112548828125
+                }
+            },
+            "mid_point": {
+                "latitude": 48.870792388916016,
+                "longitude": 2.2305679321289062
+            },
+            "octants": [
+                "30604060734050516060",
+                "30604060734050516064",
+                "30604060734050516420"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.2309112548828125
+                },
+                "south_east": {
+                    "latitude": 48.87096405029297,
+                    "longitude": 2.231597900390625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87113571166992,
+                "longitude": 2.2312545776367188
+            },
+            "octants": [
+                "30604060734050516063",
+                "30604060734050516067",
+                "30604060734050516423"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87096405029297,
+                    "longitude": 2.2309112548828125
+                },
+                "south_east": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.231597900390625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.870792388916016,
+                "longitude": 2.2312545776367188
+            },
+            "octants": [
+                "30604060734050516061",
+                "30604060734050516065",
+                "30604060734050516421"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.2309112548828125
+                },
+                "south_east": {
+                    "latitude": 48.870277404785156,
+                    "longitude": 2.231597900390625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87044906616211,
+                "longitude": 2.2312545776367188
+            },
+            "octants": [
+                "30604060734050516043",
+                "30604060734050516047",
+                "30604060734050516403"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.870277404785156,
+                    "longitude": 2.2309112548828125
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.231597900390625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8701057434082,
+                "longitude": 2.2312545776367188
+            },
+            "octants": [
+                "30604060734050516041",
+                "30604060734050516045",
+                "30604060734050516401"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.870277404785156,
+                    "longitude": 2.2309112548828125
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87044906616211,
+                "longitude": 2.2305679321289062
+            },
+            "octants": [
+                "30604060734050516042",
+                "30604060734050516046",
+                "30604060734050516402"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.870277404785156,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.2309112548828125
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8701057434082,
+                "longitude": 2.2305679321289062
+            },
+            "octants": [
+                "30604060734050516040",
+                "30604060734050516044",
+                "30604060734050516400"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.869590759277344,
+                    "longitude": 2.2309112548828125
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8697624206543,
+                "longitude": 2.2305679321289062
+            },
+            "octants": [
+                "30604060734050514262",
+                "30604060734050514266",
+                "30604060734050514622"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.869590759277344,
+                    "longitude": 2.230224609375
+                },
+                "south_east": {
+                    "latitude": 48.86924743652344,
+                    "longitude": 2.2309112548828125
+                }
+            },
+            "mid_point": {
+                "latitude": 48.86941909790039,
+                "longitude": 2.2305679321289062
+            },
+            "octants": [
+                "30604060734050514260",
+                "30604060734050514264",
+                "30604060734050514620"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.869590759277344,
+                    "longitude": 2.2309112548828125
+                },
+                "south_east": {
+                    "latitude": 48.86924743652344,
+                    "longitude": 2.231597900390625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.86941909790039,
+                "longitude": 2.2312545776367188
+            },
+            "octants": [
+                "30604060734050514261",
+                "30604060734050514265",
+                "30604060734050514621"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.2309112548828125
+                },
+                "south_east": {
+                    "latitude": 48.869590759277344,
+                    "longitude": 2.231597900390625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8697624206543,
+                "longitude": 2.2312545776367188
+            },
+            "octants": [
+                "30604060734050514263",
+                "30604060734050514267",
+                "30604060734050514623"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.231597900390625
+                },
+                "south_east": {
+                    "latitude": 48.869590759277344,
+                    "longitude": 2.2322845458984375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8697624206543,
+                "longitude": 2.2319412231445312
+            },
+            "octants": [
+                "30604060734050514272",
+                "30604060734050514276"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.869590759277344,
+                    "longitude": 2.231597900390625
+                },
+                "south_east": {
+                    "latitude": 48.86924743652344,
+                    "longitude": 2.2322845458984375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.86941909790039,
+                "longitude": 2.2319412231445312
+            },
+            "octants": [
+                "30604060734050514270",
+                "30604060734050514274"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.2322845458984375
+                },
+                "south_east": {
+                    "latitude": 48.869590759277344,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8697624206543,
+                "longitude": 2.2326278686523438
+            },
+            "octants": [
+                "30604060734050514273",
+                "30604060734050514277"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.869590759277344,
+                    "longitude": 2.2322845458984375
+                },
+                "south_east": {
+                    "latitude": 48.86924743652344,
+                    "longitude": 2.23297119140625
+                }
+            },
+            "mid_point": {
+                "latitude": 48.86941909790039,
+                "longitude": 2.2326278686523438
+            },
+            "octants": [
+                "30604060734050514271",
+                "30604060734050514275"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.2295379638671875
+                },
+                "south_east": {
+                    "latitude": 48.869590759277344,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8697624206543,
+                "longitude": 2.2298812866210938
+            },
+            "octants": [
+                "30604060734050505373",
+                "30604060734050505377",
+                "30604060734050505733"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.869590759277344,
+                    "longitude": 2.2295379638671875
+                },
+                "south_east": {
+                    "latitude": 48.86924743652344,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.86941909790039,
+                "longitude": 2.2298812866210938
+            },
+            "octants": [
+                "30604060734050505371",
+                "30604060734050505375",
+                "30604060734050505731"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.228851318359375
+                },
+                "south_east": {
+                    "latitude": 48.869590759277344,
+                    "longitude": 2.2295379638671875
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8697624206543,
+                "longitude": 2.2291946411132812
+            },
+            "octants": [
+                "30604060734050505372",
+                "30604060734050505376",
+                "30604060734050505732"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.869590759277344,
+                    "longitude": 2.228851318359375
+                },
+                "south_east": {
+                    "latitude": 48.86924743652344,
+                    "longitude": 2.2295379638671875
+                }
+            },
+            "mid_point": {
+                "latitude": 48.86941909790039,
+                "longitude": 2.2291946411132812
+            },
+            "octants": [
+                "30604060734050505370",
+                "30604060734050505374",
+                "30604060734050505730"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.228851318359375
+                },
+                "south_east": {
+                    "latitude": 48.87096405029297,
+                    "longitude": 2.2295379638671875
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87113571166992,
+                "longitude": 2.2291946411132812
+            },
+            "octants": [
+                "30604060734050507172",
+                "30604060734050507176",
+                "30604060734050507532"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87096405029297,
+                    "longitude": 2.228851318359375
+                },
+                "south_east": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.2295379638671875
+                }
+            },
+            "mid_point": {
+                "latitude": 48.870792388916016,
+                "longitude": 2.2291946411132812
+            },
+            "octants": [
+                "30604060734050507170",
+                "30604060734050507174",
+                "30604060734050507530"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.228851318359375
+                },
+                "south_east": {
+                    "latitude": 48.870277404785156,
+                    "longitude": 2.2295379638671875
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87044906616211,
+                "longitude": 2.2291946411132812
+            },
+            "octants": [
+                "30604060734050507152",
+                "30604060734050507156",
+                "30604060734050507512"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.870277404785156,
+                    "longitude": 2.228851318359375
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.2295379638671875
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8701057434082,
+                "longitude": 2.2291946411132812
+            },
+            "octants": [
+                "30604060734050507150",
+                "30604060734050507154",
+                "30604060734050507510"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.2295379638671875
+                },
+                "south_east": {
+                    "latitude": 48.870277404785156,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87044906616211,
+                "longitude": 2.2298812866210938
+            },
+            "octants": [
+                "30604060734050507153",
+                "30604060734050507157",
+                "30604060734050507513"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.870277404785156,
+                    "longitude": 2.2295379638671875
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8701057434082,
+                "longitude": 2.2298812866210938
+            },
+            "octants": [
+                "30604060734050507151",
+                "30604060734050507155",
+                "30604060734050507511"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87096405029297,
+                    "longitude": 2.2295379638671875
+                },
+                "south_east": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.870792388916016,
+                "longitude": 2.2298812866210938
+            },
+            "octants": [
+                "30604060734050507171",
+                "30604060734050507175",
+                "30604060734050507531"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.2295379638671875
+                },
+                "south_east": {
+                    "latitude": 48.87096405029297,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87113571166992,
+                "longitude": 2.2298812866210938
+            },
+            "octants": [
+                "30604060734050507173",
+                "30604060734050507177",
+                "30604060734050507533"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.2281646728515625
+                },
+                "south_east": {
+                    "latitude": 48.869590759277344,
+                    "longitude": 2.228851318359375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8697624206543,
+                "longitude": 2.2285079956054688
+            },
+            "octants": [
+                "30604060734050505367",
+                "30604060734050505723"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.869590759277344,
+                    "longitude": 2.2281646728515625
+                },
+                "south_east": {
+                    "latitude": 48.86924743652344,
+                    "longitude": 2.228851318359375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.86941909790039,
+                "longitude": 2.2285079956054688
+            },
+            "octants": [
+                "30604060734050505365",
+                "30604060734050505721"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87199401855469,
+                    "longitude": 2.2281646728515625
+                },
+                "south_east": {
+                    "latitude": 48.87165069580078,
+                    "longitude": 2.228851318359375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.871822357177734,
+                "longitude": 2.2285079956054688
+            },
+            "octants": [
+                "30604060734050507347",
+                "30604060734050507703"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87165069580078,
+                    "longitude": 2.2281646728515625
+                },
+                "south_east": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.228851318359375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87147903442383,
+                "longitude": 2.2285079956054688
+            },
+            "octants": [
+                "30604060734050507345",
+                "30604060734050507701"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.2281646728515625
+                },
+                "south_east": {
+                    "latitude": 48.870277404785156,
+                    "longitude": 2.228851318359375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87044906616211,
+                "longitude": 2.2285079956054688
+            },
+            "octants": [
+                "30604060734050507147",
+                "30604060734050507503"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.870277404785156,
+                    "longitude": 2.2281646728515625
+                },
+                "south_east": {
+                    "latitude": 48.86993408203125,
+                    "longitude": 2.228851318359375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.8701057434082,
+                "longitude": 2.2285079956054688
+            },
+            "octants": [
+                "30604060734050507145",
+                "30604060734050507501"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87096405029297,
+                    "longitude": 2.2281646728515625
+                },
+                "south_east": {
+                    "latitude": 48.87062072753906,
+                    "longitude": 2.228851318359375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.870792388916016,
+                "longitude": 2.2285079956054688
+            },
+            "octants": [
+                "30604060734050507165",
+                "30604060734050507521"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.2281646728515625
+                },
+                "south_east": {
+                    "latitude": 48.87096405029297,
+                    "longitude": 2.228851318359375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87113571166992,
+                "longitude": 2.2285079956054688
+            },
+            "octants": [
+                "30604060734050507167",
+                "30604060734050507523"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87199401855469,
+                    "longitude": 2.2295379638671875
+                },
+                "south_east": {
+                    "latitude": 48.87165069580078,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.871822357177734,
+                "longitude": 2.2298812866210938
+            },
+            "octants": [
+                "30604060734050507357",
+                "30604060734050507713"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87165069580078,
+                    "longitude": 2.2295379638671875
+                },
+                "south_east": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.230224609375
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87147903442383,
+                "longitude": 2.2298812866210938
+            },
+            "octants": [
+                "30604060734050507355",
+                "30604060734050507711"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87165069580078,
+                    "longitude": 2.228851318359375
+                },
+                "south_east": {
+                    "latitude": 48.871307373046875,
+                    "longitude": 2.2295379638671875
+                }
+            },
+            "mid_point": {
+                "latitude": 48.87147903442383,
+                "longitude": 2.2291946411132812
+            },
+            "octants": [
+                "30604060734050507354",
+                "30604060734050507710"
+            ]
+        },
+        {
+            "bbox": {
+                "north_west": {
+                    "latitude": 48.87199401855469,
+                    "longitude": 2.228851318359375
+                },
+                "south_east": {
+                    "latitude": 48.87165069580078,
+                    "longitude": 2.2295379638671875
+                }
+            },
+            "mid_point": {
+                "latitude": 48.871822357177734,
+                "longitude": 2.2291946411132812
+            },
+            "octants": [
+                "30604060734050507356",
+                "30604060734050507712"
+            ]
+        }
+    ]
+]
