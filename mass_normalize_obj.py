@@ -1,4 +1,5 @@
 import sys
+import glob
 import numpy as np
 from pathlib import Path
 from tqdm import tqdm
@@ -18,9 +19,11 @@ Rz = np.array([[cos_lon, sin_lon, 0], [-sin_lon, cos_lon, 0], [0, 0, 1]])
 Ry = np.array([[cos_lat, 0, sin_lat], [0, 1, 0], [-sin_lat, 0, cos_lat]])
 R = Ry @ Rz
 
-for i in range(4, len(sys.argv)):
-    input_file = Path(sys.argv[i])
-    output_file = input_file.with_name(input_file.stem + '.normalized.obj')
+obj_list = glob.glob(sys.argv[4])
+
+for i in obj_list:
+    input_file = Path(i)
+    output_file = input_file.with_name(input_file.stem + '.2.obj')
 
     with input_file.open() as in_, output_file.open('w') as out:
         for line in tqdm(in_):
