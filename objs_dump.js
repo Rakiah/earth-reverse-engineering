@@ -149,7 +149,7 @@ function convertImage(inputPath, outputPath)
 {
 	return new Promise((resolve, reject) =>
 	{
-		exec(`magick convert ${inputPath} ${outputPath}`, function(error, stdout, stderr) {	
+		exec(`convert ${inputPath} ${outputPath}`, function(error, stdout, stderr) {	
 			// console.log(`${stdout}`);
 			console.log(`${stderr}`);
 
