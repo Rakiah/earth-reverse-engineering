@@ -29,30 +29,23 @@ const { getPlanetoid, getBulk, getNode, bulk: { getIndexByPath, hasBulkMetadataA
 });
 
 const latLongToOctant = require('./lib/convert-lat-long-to-octant')(utils);
-var referencePoint = undefined;
+
 /***************************** main *****************************/
 async function run() {
-
 	const planetoid = await getPlanetoid();
 	const rootEpoch = planetoid.bulkMetadataEpoch[0];
 
 	var geoDatasPerLevel = JSON.parse(fs.readFileSync(process.argv[2]));
 	var area = process.argv[3];
 	var maxLevel = process.argv[4];
-	var useReference = process.argv[5];
-
-	if (useReference == "--useReference")
-		referencePoint = JSON.parse(fs.readFileSync('reference.json', 'utf8'));
 
 	if (maxLevel > geoDatasPerLevel.length)
 		maxLevel = geoDatasPerLevel.length - 1;
-	
+
+	const objDir = path.join(path.join(DUMP_OBJ_DIR, `${area}`));
+	fs.ensureDirSync(objDir);
 	for (var level = 0; level < maxLevel; level++)
 	{
-		const objDir = path.join(path.join(DUMP_OBJ_DIR, `${area}`), `${level + 1}`);
-		fs.removeSync(objDir);
-		fs.ensureDirSync(objDir);
-
 		console.log("dumping: " + area + " at level: " + (parseInt(level) + 1));
 		console.log("outputing path: " + objDir);
 
@@ -65,74 +58,70 @@ async function run() {
 				console.log('found', path);
 				octants++;
 			},
-			async function nodeDownloaded(path, node, octantsToExclude, mid_point) {
-				console.log('downloaded', path);
-				await writeNodeOBJ(currentCtxObj, node, path, octantsToExclude, mid_point);
+			async function nodeDownloaded(oct, node, octantsToExclude) {
+				console.log('downloaded', oct);
+				if (await writeObj(currentCtxObj, node, oct, octantsToExclude) != false)
+				{
+					await convertToDraco(currentCtxObj, oct);
+					await storeReferencePoint(currentCtxObj, oct);
+					fs.writeFileSync(path.join(currentCtxObj.objDir, 'geoData.json'), JSON.stringify(currentCtxObj.geoData));
+				}
 			}
 		);
 
 		for (const geoData of geoDatas) {
-			currentCtxObj = initCtxOBJ(objDir, geoData.mid_point);
-			writeGeoData(currentCtxObj, geoData);
-			
 			for (const oct of geoData.octants) {
-				await search(oct, geoData.mid_point, level + 1);
-			}
+				var octantPath = oct.split('').reduce((a, c) => path.join(a, c));
+				var fulldir = path.join(objDir, octantPath);
+				if (fs.existsSync(fulldir))
+					continue;
 
-			await transformObjFile(currentCtxObj, geoData);
-			console.log(`${geoData.mid_point.latitude}-${geoData.mid_point.longitude} finished !`);
+				currentCtxObj = initCtxOBJ(objDir, oct, geoData);
+				await search(oct, level + 1);
+				console.log(`${oct} finished !`);
+			}
 		}
 
-		await deleteIntermediatesFiles(`${objDir}\\*\\*.bmp`.replace(/\\/g,"/"));
+	//	await deleteIntermediatesFiles(objDir, "*.bmp");
+	//	await deleteIntermediatesFiles(objDir, "*.jpg");
 
 		console.log('octants', octants);
 	}
 }
 
-async function transformObjFile(currentCtxObj, geoData)
+async function storeReferencePoint(currentCtxObj, octant)
 {
-	var inputPath = `.\\${currentCtxObj.objDir}\\${geoData.mid_point.latitude}-${geoData.mid_point.longitude}.obj`.replace(/\\/g,"/");
-	var scaledOutputPath = `.\\${currentCtxObj.objDir}\\model.scaled.obj`.replace(/\\/g,"/");
-	var dracoOutputPath = `.\\${currentCtxObj.objDir}\\model.drc.bytes`.replace(/\\/g,"/");
-
-	if (referencePoint !== undefined)
-	{
-		await normalizeObj(currentCtxObj.objDir, inputPath, referencePoint);
-		await deleteIntermediatesFiles(inputPath);
-		console.log("Obj file centered and scale !");
-	}
-
-	// await convertToDraco(scaledOutputPath, dracoOutputPath);
-	// console.log("Converted to draco file !");
-
-	await deleteIntermediatesFiles(`${currentCtxObj.objDir}\\*.bmp`.replace(/\\/g,"/"));
-	// console.log("remove intermediates files..");
-}
-
-function normalizeObj(objDir, inputPath, ref)
-{
+	var filename = `${octant}`;
+	var inputPath = `.\\${currentCtxObj.objDir}\\${filename}.obj`.replace(/\\/g,"/");
 	return new Promise((resolve, reject) =>
 	{
-		exec(`python normalize_obj.py ${ref.midPoint.x} ${ref.midPoint.y} ${ref.midPoint.z} ${inputPath}`, function(error, stdout, stderr) {	
-			console.log(`${stdout}`);
+		console.log(`find obj mid point: ${inputPath}`);
+		exec(`python find_obj_mid_point.py ${inputPath}`, function(error, stdout, stderr) {	
+			console.log(`midpoint: ${stdout}`);
 			console.log(`${stderr}`);
+
+			var item = JSON.parse(stdout);
 
 			if (error !== null)
 				reject(error);
 			else
 			{
-				fs.writeFileSync(path.join(objDir, `reference.json`), JSON.stringify(ref));
+				fs.writeFileSync(path.join(currentCtxObj.objDir, `reference.json`), JSON.stringify(item));
 				resolve();
 			}
 		});
 	});
 }
 
-function convertToDraco(inputPath, outputPath)
+async function convertToDraco(currentCtxObj, octant)
 {
+	var filename = `${octant}`;
+	var inputPath = `.\\${currentCtxObj.objDir}\\${filename}.obj`.replace(/\\/g,"/");
+	var outputPath = inputPath.replace('.obj', '.drc');
+
 	return new Promise((resolve, reject) =>
 	{
-		exec(`bash convert_to_draco.sh ${inputPath} ${outputPath}`, function(error, stdout, stderr) {	
+		exec(`draco_encoder -i ${inputPath} -o ${outputPath}`, function(error, stdout, stderr) {	
 			console.log(`${stdout}`);
 			console.log(`${stderr}`);
 
@@ -149,8 +138,7 @@ function convertImage(inputPath, outputPath)
 {
 	return new Promise((resolve, reject) =>
 	{
-		exec(`magick convert ${inputPath} ${outputPath}`, function(error, stdout, stderr) {	
-			// console.log(`${stdout}`);
+		exec(`magick convert ${inputPath} ${outputPath}`, function(error, stdout, stderr) {
 			console.log(`${stderr}`);
 
 			if (error !== null)
@@ -162,10 +150,11 @@ function convertImage(inputPath, outputPath)
 	});
 }
 
-function deleteIntermediatesFiles(files)
-{	return new Promise((resolve, reject) =>
+function deleteIntermediatesFiles(path, extension)
+{
+	return new Promise((resolve, reject) =>
 	{
-		exec(`rm -f ${files}`, function(error, stdout, stderr) {
+		exec(`rm -f $(find ${path} -type f -name ${extension})`, function(error, stdout, stderr) {
 			console.log(`${stdout}`);
 			console.log(`${stderr}`);
 
@@ -184,7 +173,7 @@ function deleteIntermediatesFiles(files)
 function initNodeSearch(rootEpoch, numParallelBranches = 1, nodeFound = null, nodeDownloaded = null) {
 	const sem = semaphore(numParallelBranches - 1);
 
-	return async function search(k, mid_point, maxLevel = 22) {
+	return async function search(k, maxLevel = 22) {
 		if (k.length > maxLevel) return false;
 
 		let check;
@@ -209,12 +198,12 @@ function initNodeSearch(rootEpoch, numParallelBranches = 1, nodeFound = null, no
 		for (const oct of [0, 1, 2, 3, 4, 5, 6, 7]) {
 			promises.push((async function fn() {
 				try {
-					results.push({ oct, res: await search(k + oct, mid_point, maxLevel) });
+					results.push({ oct, res: await search(k + oct, maxLevel) });
 					if (results.length === 8) {
 						const octs = results.filter(({ res }) => res).map(({ oct }) => oct)
 						const node = await getNode(k, check.bulk, check.index);
 						try {
-							await nodeDownloaded(k, node, octs, mid_point);
+							await nodeDownloaded(k, node, octs);
 						} catch (ex) {
 							console.error('Unhandled nodeDownload callback error');
 							throw ex;
@@ -263,19 +252,20 @@ async function checkNodeAtNodePath(rootEpoch, nodePath) {
 /****************************************************************/
 
 /**************************** export ****************************/
-function initCtxOBJ(dir, mid_point) {
-	var fulldir = path.join(dir, `${mid_point.latitude}-${mid_point.longitude}`);
-	fs.removeSync(fulldir);
-	fs.ensureDirSync(fulldir);
-	fs.writeFileSync(path.join(fulldir, `${mid_point.latitude}-${mid_point.longitude}.obj`), `mtllib ${mid_point.latitude}-${mid_point.longitude}.mtl\n`);
-	return { objDir: fulldir, c_v: 0, c_n: 0, c_u: 0 };
+function initCtxOBJ(dir, octant, geoData) {
+	var octantPath = octant.split('').reduce((accumulator, currentValue) => path.join(accumulator, currentValue));
+	var fulldir = path.join(dir, `${octantPath}`);
+	return { objDir: fulldir, c_v: 0, c_n: 0, c_u: 0, geoData: geoData };
 }
 
-function writeGeoData(ctx, geoData) {
-	fs.writeFileSync(path.join(ctx.objDir, 'geoData.json'), JSON.stringify(geoData));
-}
+async function writeObj(ctx, node, nodeName, exclude) {
 
-async function writeNodeOBJ(ctx, node, nodeName, exclude, mid_point) {
+	if (node.meshes === undefined || Object.keys(node.meshes).length <= 0)
+		return false;
+
+	fs.ensureDirSync(ctx.objDir);
+	fs.writeFileSync(path.join(ctx.objDir, `${nodeName}.obj`), `mtllib ${nodeName}.mtl\n`);
+
 	for (const [meshIndex, mesh] of Object.entries(node.meshes)) {
 		const meshName = `${nodeName}_${meshIndex}`;
 		const tex = mesh.texture;
@@ -283,15 +273,16 @@ async function writeNodeOBJ(ctx, node, nodeName, exclude, mid_point) {
 		const override_extension = "png";
 
 		const obj = writeMeshOBJ(ctx, meshName, texName, node, mesh, exclude);
-		fs.appendFileSync(path.join(ctx.objDir, `${mid_point.latitude}-${mid_point.longitude}.obj`), obj);
+		fs.appendFileSync(path.join(ctx.objDir, `${nodeName}.obj`), obj);
 
 		const { buffer: buf, extension: ext } = decodeTexture(tex);
-		
+	
 		fs.writeFileSync(path.join(ctx.objDir, `${texName}.${ext}`), buf);
 		await convertImage(path.join(ctx.objDir, `${texName}.${ext}`), path.join(ctx.objDir, `${texName}.${override_extension}`));
 		
+		
 
-		fs.appendFileSync(path.join(ctx.objDir, `${mid_point.latitude}-${mid_point.longitude}.mtl`), `
+		fs.appendFileSync(path.join(ctx.objDir, `${nodeName}.mtl`), `
 			newmtl ${texName}
 			Ka 1.000000 1.000000 1.000000
 			Kd 1.000000 1.000000 1.000000
@@ -303,6 +294,7 @@ async function writeNodeOBJ(ctx, node, nodeName, exclude, mid_point) {
 			`.split('\n').map(s => s.trim()).join('\n'));
 
 	}
+	return true;
 }
 
 function writeMeshOBJ(ctx, meshName, texName, payload, mesh, exclude) {
@@ -332,7 +324,6 @@ function writeMeshOBJ(ctx, meshName, texName, payload, mesh, exclude) {
 	console.log(`o planet_${meshName}`);
 
 	console.log("# vertices");
-	// let offset = setAndGetReferenceOffset(payload.matrixGlobeFromMesh);
 	for (let i = 0; i < vertices.length; i += 8) {
 
 		let x = vertices[i + 0]

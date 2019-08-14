@@ -1,4 +1,6 @@
 import sys
+import json
+import jsonpickle
 import numpy as np
 
 
@@ -30,10 +32,10 @@ def find_mid_point_by_lat_lon_rad(vertices):
     x = rad * np.cos(lat) * np.cos(lon)
     y = rad * np.cos(lat) * np.sin(lon)
     z = rad * np.sin(lat)
-    return np.array([x, y, z])
+    return { "x": x, "y": y, "z": z }
 
 
 input_file = sys.argv[1]
 vertices = load_obj_vertices(input_file)
 mid_point = find_mid_point_by_lat_lon_rad(vertices)
-print(mid_point)
+print(json.dumps(mid_point))

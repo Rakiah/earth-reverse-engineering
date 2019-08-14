@@ -134,15 +134,10 @@ overlapping_octants.update_bulk_data(bulk)
 
 octant_per_latlong = []
 for level in range(1, max_level + 1):
-    
-#    if len(overlapping_octants[level]) >= MAX_COUNT:
-#        break
-        
     octant_per_latlong.append([])
     for octant in overlapping_octants[level]:
         bbox = octant_to_latlong(octant.path)
         index = find_octant_geo_data(octant_per_latlong[level - 1], bbox.mid_point)
-        # print(index)
         if index < 0:
             octant_per_latlong[level - 1].append(OctantGeoData(bbox, [ octant.path ]))
         else:
